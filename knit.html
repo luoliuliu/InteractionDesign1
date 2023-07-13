@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript C3</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="chart3"></div>
+
+
+    <script>
+
+
+    var chart3 = c3.generate({
+      bindto:'#chart3',
+      data:{
+        columns:[
+        ['近五日每日访客量',1000,900,950,1050,800,960],
+        ['近五日每日上传作品量',230,180,200,250,150,220]
+      ],
+      types:{
+        sample:'area',
+        sample2:'area-spline'
+      },
+      colors:{
+        sample:'hotpink',
+        sample2:'pink'
+      }
+      },
+      size:{
+        height:240,
+        width:480
+      },
+      axis:{
+        x:{
+          label:'X Label'
+        },
+        y:{
+          label:'Y Label'
+        }
+      }
+    });
+
+
+    </script>
+  </body>
+</html>

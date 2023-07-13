@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Leaflet example</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  </head>
+
+  <body>
+    <button type="button" onclick="show_districts();">Show Districts</button>
+
+     <div id="map" style="width:600px;height:400px"></div>
+
+     <script>
+       var map = L.map('map').setView([22.287111, 114.191667], 13);
+
+       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+    function show_districts(){
+      L.marker([22.287111, 114.191667]).addTo(map)
+      .bindPopup('<a href="https://en.wikipedia.org/wiki/North_Point" target="_blank">'+ '<img src="https:// upload.wikimedia.org/wikipedia/commons/thumb/c/c4/City_Garden.jpg/250px-City_Garden.jpg"
+style="width:80px;height:80px;"><br>' +'North_Point'+'</a>').openPopup();
+}
+
+
+     </script>
+  </body>
+</html>
